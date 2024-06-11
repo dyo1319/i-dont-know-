@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+:root {
+    --header-height: 4rem;
+    --black-color: black;
+    --black-color-light: hsl(220,24%,15%);
+    --yellow-color: yellow;
+    --white-color: white;
+    --body-font: "Montserrat", sans-serif;
+    --normal-font-size: 1rem;
+    --font-semi-bold: 600;
+    --z-fixed: 100;
+}
+
+/* Base styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Container class */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 98%;
+    margin: 0;
+    padding: 0 1rem;
+   height: var(--header-height);
+}
+
+/* Header styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--black-color);
+    z-index: var(--z-fixed);
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+    font-weight: var(--font-semi-bold);
+    color: var(--white-color);
+    font-size: 1.4rem;
+}
+
+.nav__logo i {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+}
+
+.nav__toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.nav__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__list {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav__link {
+    color: var(--white-color);
+    font-weight: var(--font-semi-bold);
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav__link:hover {
+    color: var(--yellow-color);
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #222;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid yellow;
+    width: 20%; /* Could be more or less, depending on screen size */
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Additional styles for the login form */
+.signin {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  
+}
+
+.signin .content h2 {
+  font-size: 2em;
+  color: yellow;
+  margin-bottom: 20px;
+}
+
+.signin .content .form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.signin .content .form .inputBox {
+  position: relative;
+  width: 100%;
+}
+
+.signin .content .form .inputBox input {
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.signin .content .form .inputBox i {
+  position: absolute;
+  left: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.signin .content .form .inputBox input:focus ~ i,
+.signin .content .form .inputBox input:valid ~ i {
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #fff;
+}
+
+.signin .content .form .links {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.signin .content .form .links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.signin .content .form .links a:nth-child(2) {
+  color: yellow;
+  font-weight: 600;
+}
+
+.signin .content .form .inputBox input[type="submit"] {
+  padding: 10px;
+  background: yellow;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+input[type="submit"]:active {
+  opacity: 0.6;
+}
+
+
+/* Home CSS */
+.home {
+    display: flex;
+    margin-top: 3rem;
+    height: 600px;
+    width: 100%;
+}
+
+.home-page {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+.text-wrapper {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2rem;
+    color: var(--white-color);
+    z-index: 1;
+}
+
+.text-wrapper h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+#white {
+    color: white;
+}
+
+#yellow {
+    color: yellow;
+}
+
+.contain-img {
+    margin-left: 25%;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+
+.contain-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1125px) {
+    .nav__list {
+        display: flex;
+        gap: 0rem;
+    }
+
+}
+
+@media screen and (max-width: 340px) {
+    .container{
+        margin-inline: auto;
+    }
+
+    .nav__toggle {
+        font-size: 2rem;
+    }
+
+    .nav__list {
+        display: flex;
+        gap: 1.5rem;
+        padding-bottom: 1rem;
+    }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 935px) {
+    .nav__toggle {
+        display: block;
+        font-size: 2rem;
+    }
+
+    .nav__menu {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background-color: var(--black-color);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav__menu.show-menu {
+        display: flex;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        width: 100%;
+        padding-bottom:1rem;
+        column-gap: 5rem;
+    }
+
+    .nav__link {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+    }
+} 
+
+
